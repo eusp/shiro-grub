@@ -9,21 +9,22 @@ Proyectos Shiro: [shiro-theme](https://github.com/eusp/shiro-theme) ·
 [shiro-ags](https://github.com/eusp/shiro-ags) ·
 [shiro-hyprland](https://github.com/eusp/shiro-hyprland) ·
 [shiro-sddm](https://github.com/eusp/shiro-sddm) ·
-**shiro-grub**
+**shiro-grub** ·
+[shiro-limine](https://github.com/eusp/shiro-limine)
 
 ## Instalación
 
 El repo vive en `~/.config/shiro-grub` (lo clona `install.sh` de shiro-theme). Para aplicarlo:
 
 ```bash
-sudo node ~/.config/shiro-theme/build-grub.js
+sudo node ~/.config/shiro-theme/build-boot.js
 ```
 
-Eso regenera los archivos, copia el tema a `/boot/grub/themes/shiro-grub` (o `/boot/grub2/...`
+`build-boot.js` detecta el bootloader; con GRUB regenera los archivos, copia el tema a `/boot/grub/themes/shiro-grub` (o `/boot/grub2/...`
 en Fedora), apunta `GRUB_THEME` en `/etc/default/grub` y corre `grub-mkconfig`.
 
-Solo sirve si el sistema arranca con GRUB. CachyOS instala Limine por defecto: hay que elegir
-GRUB en el instalador (ver `CACHYOS.md` en shiro-theme). Sin GRUB, el builder se omite solo.
+Solo sirve si el sistema arranca con GRUB. Con Limine (el bootloader por defecto de CachyOS) se usa
+[shiro-limine](https://github.com/eusp/shiro-limine) en su lugar. Sin GRUB, este builder se omite solo.
 
 ## Archivos
 
